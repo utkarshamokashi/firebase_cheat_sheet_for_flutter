@@ -1,4 +1,4 @@
-1.	ADDING DATA
+1.ADDING DATA
 async {
   Navigator.of(context).pop();
   await _project.collection("project").document(myController.text).setData({
@@ -10,7 +10,7 @@ async {
   });
 
 
-2.	FETCHING DATA
+2.FETCHING DATA
 _note.collection("notes")
     .where("notes_id", isEqualTo: Variables.currentNote).snapshots().listen((data)=>data.documents.forEach((doc) {
   setState(() {
@@ -19,7 +19,7 @@ _note.collection("notes")
 }
 
 
-3.	UPDATING or EDITING DATA
+3.UPDATING or EDITING DATA
 await _note.collection("notes").document(Variables.currentNote).updateData({
   "notes_title": title,
   "project_notes": text,
@@ -43,7 +43,7 @@ onPressed: () async{
 },
 
 
-4.	DISPLAYING DATA
+4.DISPLAYING DATA
 StreamBuilder(
   stream: _project
       .collection("project")
